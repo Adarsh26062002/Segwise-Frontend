@@ -24,41 +24,67 @@
 
 // export default ApplyDropdown
 
+// CSS
 
-
-                                                       // CSS
-
-
-import React from 'react';
+import React, { useState } from "react";
 import { IoIosSearch } from "react-icons/io";
 import { MdOutlineSubdirectoryArrowLeft } from "react-icons/md";
-import '../styles/ApplyDropdown.css'; 
+import "../styles/ApplyDropdown.css";
 
-const ApplyDropdown = () => {
-    return (
-        <div className="apply-dropdown">
-            <div className="search-bar">
-                <IoIosSearch className="search-icon" />
-                <input type="text" placeholder="Search" className="search-input" />
-            </div>
+const ApplyDropdown = ({ onApply, selectedValues }) => {
+  const [checkedItems, setCheckedItems] = useState(selectedValues || []);
 
-            <ul className="dropdown-list">
-                <li className="dropdown-item">
-                    <input type="checkbox" /><p>Select All</p>
-                </li>
-                <li className="dropdown-item"><input type="checkbox" /><p>Pumpkin</p></li>
-                <li className="dropdown-item"><input type="checkbox" /><p>Cat</p></li>
-                <li className="dropdown-item"><input type="checkbox" /><p>Ghost</p></li>
-                <li className="dropdown-item"><input type="checkbox" /><p>Egg</p></li>
-                <button className="apply-button">
-                    <p>Apply</p>
-                    <MdOutlineSubdirectoryArrowLeft className="apply-icon" />
-                </button>
-            </ul>
-        </div>
-    );
-}
+  const handleApply = () => {
+    onApply(checkedItems);
+  };
+
+  const handleCheckboxChange = (value) => {
+    if (checkedItems.includes(value)) {
+      setCheckedItems(checkedItems.filter((item) => item !== value));
+    } else {
+      setCheckedItems([...checkedItems, value]);
+    }
+  };
+
+  return (
+    <div className="apply-dropdown">
+      <div className="search-bar">
+        <IoIosSearch className="search-icon" />
+        <input type="text" placeholder="Search" className="search-input" />
+      </div>
+
+      <ul className="dropdown-list">
+        <li className="dropdown-item">
+          <input
+            type="checkbox"
+            checked={checkedItems.length === 4} // Assuming 4 total items
+            onChange={() => {
+              if (checkedItems.length === 4) {
+                setCheckedItems([]);
+              } else {
+                setCheckedItems(["Pumpkin", "Cat", "Ghost", "Egg"]);
+              }
+            }}
+          />
+          <p>Select All</p>
+        </li>
+        {["Pumpkin", "Cat", "Ghost", "Egg"].map((item) => (
+          <li key={item} className="dropdown-item">
+            <input
+              type="checkbox"
+              checked={checkedItems.includes(item)}
+              onChange={() => handleCheckboxChange(item)}
+            />
+            <p>{item}</p>
+          </li>
+        ))}
+        <button className="apply-button" onClick={handleApply}>
+          <p>Apply</p>
+          <MdOutlineSubdirectoryArrowLeft className="apply-icon" />
+        </button>
+      </ul>
+    </div>
+  );
+};
 
 export default ApplyDropdown;
-
-

@@ -50,7 +50,7 @@
 
 
 
-import React from 'react'
+import React, { useState } from 'react'
 
 import { CiFilter } from "react-icons/ci";
 import { IoMdArrowDropdown } from "react-icons/io";
@@ -61,12 +61,16 @@ import MatriceSpends from './MatriceSpends';
 import '../styles/TaskFiled.css';
 
 const TaskFiled = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <>
       <div className="task-container">
         <div className="task-box">
           <div className="task-filter">
-            <button className="filter-button">
+            <button className="filter-button" onClick={toggleDropdown}>
               <CiFilter className="filter-icon" />
               <p className="filter-text">Filters</p>
               <IoMdArrowDropdown className="dropdown-icon" />
@@ -76,7 +80,7 @@ const TaskFiled = () => {
       </div>
 
      
-      {/* <CategoryDropdown/> */}
+      <CategoryDropdown isOpen={isOpen} toggleDropdown={toggleDropdown} />
       {/* <TagCharacter/> */}
       {/* <MultipleFilter /> */}
       {/* <MatriceSpends /> */}

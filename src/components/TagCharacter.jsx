@@ -5,12 +5,10 @@
 // import { RiDeleteBin6Line } from "react-icons/ri";
 // import ApplyDropdown from './ApplyDropdown';
 
-
 // const TagCharacter = () => {
 //     return (<>
 
 //         {/* Step 2 UI  */}
-
 
 //         <div className='absolute left-[400px]'>
 
@@ -31,17 +29,9 @@
 
 //                         </div>
 
-
-
-
 //                     </div>
 
-
-
-
-
 //                 </div>
-
 
 //                 <ApplyDropdown />
 //             </div >
@@ -52,58 +42,69 @@
 
 // export default TagCharacter
 
+// CSS
 
-
-
-                                                       // CSS
-
-
-import React from 'react';
+import React, { useState } from "react";
 import { FaPlus } from "react-icons/fa6";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import ApplyDropdown from './ApplyDropdown';
-import '../styles/TagCharacter.css'; // Import the CSS file
+import ApplyDropdown from "./ApplyDropdown";
+import "../styles/TagCharacter.css"; // Import the CSS file
 
-const TagCharacter = () => {
-    return (
-        <>
-            <div className="tag-character-container">
-                <div className="tag-character-wrapper">
-                    <div className="filter-box">
-                        <div className="add-filter">
-                            <FaPlus className="add-filter-icon" /> Add Filter
-                        </div>
+const TagCharacter = ({ selectedColumn, columnValue }) => {
+  const [showApplyDropdown, setShowApplyDropdown] = useState(false);
+  const [selectedValues, setSelectedValues] = useState([]);
 
-                        <div className="filter-content">
-                            <div className="filter-header">
-                                <div className="filter-tag">
-                                    <p>Tag</p>
-                                    <MdKeyboardArrowRight className="icon" />
-                                </div>
-                                <div className="filter-character">
-                                    <p>Character</p>
-                                    <IoMdArrowDropdown className="icon" />
-                                </div>
-                                <button className="delete-button">
-                                    <RiDeleteBin6Line className="delete-icon" />
-                                </button>
-                            </div>
+  const handleValueClick = () => {
+    setShowApplyDropdown(!showApplyDropdown);
+  };
 
-                            <div className="filter-selection">
-                                <p>is</p>
-                                <button className="select-value">Select Value</button>
-                            </div>
-                        </div>
-                    </div>
+  const handleApply = (values) => {
+    setSelectedValues(values);
+    setShowApplyDropdown(false);
+  };
+
+  return (
+    <>
+      <div className="tag-character-container">
+        <div className="tag-character-wrapper">
+          <div className="filter-box">
+            <div className="filter-content">
+              <div className="filter-header">
+                <div className="filter-tag">
+                  <p>{selectedColumn}</p>
+                  <MdKeyboardArrowRight className="icon" />
                 </div>
-                <ApplyDropdown />
+                <div className="filter-character">
+                  <p>{columnValue}</p>
+                  <IoMdArrowDropdown className="icon" />
+                </div>
+                <button className="delete-button">
+                  <RiDeleteBin6Line className="delete-icon" />
+                </button>
+              </div>
+
+              <div className="filter-selection">
+                <p>is</p>
+                <button className="select-value" onClick={handleValueClick}>
+                  {selectedValues.length > 0
+                    ? selectedValues.join(", ")
+                    : "Select Value"}
+                </button>
+              </div>
             </div>
-        </>
-    );
-}
+          </div>
+        </div>
+        {showApplyDropdown && (
+          <ApplyDropdown
+            onApply={handleApply}
+            selectedValues={selectedValues}
+          />
+        )}
+      </div>
+    </>
+  );
+};
 
 export default TagCharacter;
-
-
