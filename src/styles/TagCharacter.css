@@ -1,0 +1,117 @@
+.tag-character-container {
+    position: absolute;
+    left: 400px;
+    bottom:100px
+}
+
+.tag-character-wrapper {
+    position: relative;
+}
+
+.filter-box {
+    height: auto;
+    cursor: default;
+    position: absolute;
+    top: 30px;
+    left: -110px;
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+}
+
+.add-filter {
+    width: 100%;
+    background-color: #F6FDED;
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid #E5E7EB;
+    font-weight: 300;
+    color: black;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.add-filter-icon {
+    background-color: #E3FA99;
+    border: 1px solid #D1D5DB;
+    color: #6B7280;
+    padding: 2px;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.filter-content {
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+    border: 1px solid #E5E7EB;
+}
+
+.filter-header {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+    align-items: center;
+}
+
+.filter-tag,
+.filter-character {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter-character p {
+    color: #111827;
+    margin-right: 5px;
+}
+
+.icon {
+    font-size: 24px;
+    color: #9CA3AF;
+}
+
+.delete-button {
+    margin-left: auto;
+    padding: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-icon {
+    color: #D1D5DB;
+    font-size: 25px;
+}
+
+.delete-button:hover .delete-icon {
+    color: #DC2626;
+}
+
+.filter-selection {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    gap: 25px;
+}
+
+.select-value {
+    background-color: #F6F8FA;
+    border-radius: 6px;
+    padding: 5px 10px;
+    width: 290px;
+    height: 45px;
+    color: #6B7280;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+}

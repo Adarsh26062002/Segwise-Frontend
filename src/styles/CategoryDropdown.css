@@ -1,0 +1,124 @@
+.category-dropdown-container {
+    position: absolute;
+    bottom: 100px;
+    left: 400px;
+}
+
+.category-dropdown-wrapper {
+    position: relative;
+}
+
+.category-dropdown {
+    height: auto;
+    cursor: default;
+    position: absolute;
+    top: 30px;
+    left: -110px;
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid #E5E7EB; /* border-gray-200 */
+    border-radius: 12px;
+}
+
+.add-filter {
+    width: 100%;
+    background-color: #F6FDED;
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid #E5E7EB; /* border-gray-200 */
+    font-weight: 300; /* font-light */
+    color: black;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1); /* shadow-sm */
+}
+
+.add-filter-icon {
+    background-color: #E3FA99;
+    border: 1px solid #D1D5DB; /* border-gray-300 */
+    color: #6B7280; /* text-gray-500 */
+    padding: 2px;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+/* Category Section */
+.category-container {
+    position: absolute;
+    top: -55px;
+}
+
+.category-dropdown-box {
+    height: auto;
+    width: 340px;
+    position: absolute;
+    top: 155px;
+    left: -100px;
+    margin-bottom: 10px;
+    border: 1px solid #E5E7EB; /* border-gray-200 */
+    border-radius: 12px;
+    background-color: white;
+}
+
+.search-bar {
+    border-bottom: 1px solid #E5E7EB;
+    padding: 5px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    color: #9CA3AF; /* text-gray-400 */
+    margin: 0 5px;
+    font-size: 26px;
+}
+
+.search-input {
+    outline: none;
+    caret-color: #10B981; /* caret-green-500 */
+    font-size: 15px;
+    font-weight: 300; /* font-light */
+}
+
+.category-tabs {
+    display: flex;
+    gap: 20px;
+    padding: 8px;
+    border-bottom: 2px solid #E5E7EB;
+    padding-top: 15px;
+}
+
+.category-tab {
+    cursor: pointer;
+}
+
+.category-tab:hover {
+    border-bottom: 2px solid black;
+    color: black;
+}
+
+.category-list {
+    padding: 8px;
+}
+
+.category-item {
+    border-radius: 8px;
+    padding: 5px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #4B5563; /* text-gray-600 */
+    font-size: 15px;
+    gap: 12px;
+}
+
+.category-item:hover {
+    background-color: #F6F8FA;
+}

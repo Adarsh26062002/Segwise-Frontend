@@ -1,0 +1,58 @@
+.task-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 100px;
+}
+
+.task-box {
+    width: 1300px;
+    border: 4px dashed #D1D5DB;
+    padding: 60px 200px;
+    height: 181px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.task-filter {
+    width: 943px;
+    height: 70px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    background-color: #F6F8FA;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+
+}
+
+.filter-button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 7px 5px;
+    border-radius: 8px;
+    border: none;
+}
+
+.filter-icon {
+    font-size: 20px;
+    color: #6B7280;
+}
+
+.filter-text {
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+.dropdown-icon {
+    font-size: 24px;
+    color: #9CA3AF;
+}
